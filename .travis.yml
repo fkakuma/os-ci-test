@@ -1,0 +1,11 @@
+language: python
+python:
+  - "3.4"
+
+sudo: required  # Required to enable Docker service
+
+script:
+  - bash -xe tests/fullstack/fullstack_main.sh
+
+after_success:
+  - coveralls
