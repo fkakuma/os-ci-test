@@ -1,0 +1,13 @@
+diff --git a/tools/configure_for_func_testing.sh b/tools/configure_for_func_testing.sh
+index f603b12..af96dd7 100755
+--- a/tools/configure_for_func_testing.sh
++++ b/tools/configure_for_func_testing.sh
+@@ -217,7 +217,7 @@ EOF
+ function _install_post_devstack {
+     echo_summary "Performing post-devstack installation"
+ 
+-    _install_databases
++    _install_databases nopg
+     _install_rootwrap_sudoers
+ 
+     if is_ubuntu; then

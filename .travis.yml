@@ -1,0 +1,16 @@
+language: python
+python:
+  - "3.4"
+
+dist: trusty
+sudo: required
+
+script:
+  - bash -xe tests/fullstack/fullstack_main.sh
+
+after_success:
+  - coveralls
+
+env:
+  global:
+    - secure: "REfIeeddgLQD888w0ZiWyoGfyblrbBJTULaCEYcULTZXaNfowFkPzvv25zUHOwBmq2QqsPlVMQs3J7mouozlau+2uTgQzDl6f97KdqfvEs+seECIpksaolXRRMTvCCpVurTyg+C8fnNwibhd5Q00aoKS6I426YZbakA0xFp8E7mBX+2xSgQ6vmaRmLaVVxAC5XzzcC4nB05vNISRfQBdSaEqRDO2uXfhiESN60Fa1f7C39YgXnEH9QIgGASpSgfAr+p4gbymTSUriMr9qoC2xTQ+qF+xl74C4YO3PBJ6dyItUYy9OLHPve6Jvcp2ahp/WxsiDdDR99RMl7evb9Nt6KlLcDpZ7XeaE9tGv02ftArb6Rj7qxrkSeaJITz7SsOzz+BE7O7YbO8rdfqnmyKkr41aVdKhMsWZKz8rnToJx9lWTY4tLJZL6POO3KI+Ju++NLdGM9tRwtkpyfFwhTQZ/+HwgDKKYUrprPhYSTCD5Izep2C97tv8NnIgMr/KxSTQGlmtyd9bXS3/KVjxAxl4YJpeSKuIouaAh+XDOScmJekyb0DeZPkxnDmK2I+QpNHrOTMp441pHV2p6Qdj7WcxL1LEmEjsm+tAptRv4gbyVBCObXFL9qV2c6jz4tHqFEsXgv8zcURHKy4csR+njiFH+JKq4VYc81VjUgHi1UmLgsc="
