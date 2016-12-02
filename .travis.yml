@@ -4,6 +4,16 @@ python:
 
 dist: trusty
 sudo: required
+before_install:
+  - sudo dpkg -l | grep mysql
+  - sudo apt-get remove --purge apparmor
+  - sudo apt-get remove --purge -y libmysqlclient-dev libmysqlclient18 libqt4-sql-mysql mysql-client-5.6 mysql-client-core-5.6 mysql-common mysql-common-5.6 mysql-server-5.6 mysql-server-core-5.6
+  - sudo rm -f /etc/apt/sources.list.d/mysql.list
+  - sudo rm -rf /var/lib/mysql
+  - sudo rm -rf /etc/mysql
+  - sudo apt-get autoremove
+  - sudo apt-get autoclean
+  - sudo ln -sfn local /usr/os-testr-env
 
 script:
   - bash -xe tests/fullstack/fullstack_main.sh
