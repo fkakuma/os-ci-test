@@ -16,7 +16,7 @@ before_install:
   - sudo ln -sfn local /usr/os-testr-env
 
 script:
-  - bash -xe tests/fullstack/fullstack_main.sh
+  - bash -x tests/fullstack/fullstack_main.sh
 
 after_success:
   - coveralls

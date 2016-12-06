@@ -1,0 +1,13 @@
+diff --git a/neutron/tests/contrib/post_test_hook.sh b/neutron/tests/contrib/post_test_hook.sh
+index 8e3fe7a..c17c721 100644
+--- a/neutron/tests/contrib/post_test_hook.sh
++++ b/neutron/tests/contrib/post_test_hook.sh
+@@ -3,7 +3,7 @@
+ set -xe
+
+ NEUTRON_DIR="$BASE/new/neutron"
+-SCRIPTS_DIR="/usr/os-testr-env/bin/"
++SCRIPTS_DIR=${SCRIPTS_DIR:-/usr/os-testr-env/bin/}
+
+ venv=${1:-"dsvm-functional"}
+
