@@ -45,6 +45,9 @@ popd
 sudo chown -R $STACK_USER:$STACK_USER $BASE
 $SUDO_EXEC bash -xe $DIR_PATH/fullstack_run.sh
 RUN_STATUS=$?
+pushd $BASEDIR
+ls neutron/.tox/dsvm-fullstack/bin
+popd
 
 if [[ "$TRAVIS_PULL_REQUEST" == "false" ]]; then
 set +x
