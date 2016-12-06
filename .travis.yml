@@ -14,6 +14,7 @@ before_install:
   - sudo apt-get autoremove
   - sudo apt-get autoclean
   - sudo ln -sfn local /usr/os-testr-env
+  - sudo ls /usr/local/bin
 
 script:
   - bash -x tests/fullstack/fullstack_main.sh
