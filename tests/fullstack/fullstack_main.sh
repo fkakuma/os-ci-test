@@ -10,6 +10,7 @@ SCRIPT_PATH=`pwd`
 popd
 export STACK_USER=stack
 SUDO_EXEC="sudo -H -u $STACK_USER"
+SUDO_EXEC2="sudo -H"
 export BASE=/opt/stack
 BASEDIR=$BASE/new
 cat tests/ryu_info
@@ -43,7 +44,7 @@ sudo $BASEDIR/devstack/tools/create-stack-user.sh
 popd
 
 sudo chown -R $STACK_USER:$STACK_USER $BASE
-$SUDO_EXEC bash -xe $DIR_PATH/fullstack_run.sh
+$SUDO_EXEC2 bash -xe $DIR_PATH/fullstack_run.sh
 RUN_STATUS=$?
 pushd $BASEDIR
 ls neutron/.tox/dsvm-fullstack/bin
