@@ -8,6 +8,7 @@ DIR_PATH=`dirname $0`
 pushd $DIR_PATH
 SCRIPT_PATH=`pwd`
 popd
+export VIRTUAL_ENV=""
 export STACK_USER=stack
 SUDO_EXEC="sudo -H -u $STACK_USER"
 export BASE=/opt/stack
