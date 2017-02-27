@@ -1,3 +1,2 @@
 no-pg.patch
 post_test_hook.sh.1.patch
-specify-test.patch
