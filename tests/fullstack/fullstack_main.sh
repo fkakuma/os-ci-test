@@ -1,6 +1,7 @@
 #!/bin/bash
 #set -xe
 
+date
 if [ -z $USER ]; then
     USER=travis
 fi
@@ -73,4 +74,5 @@ git push origin debug-logs
 popd
 rm -v ~/.netrc
 fi
+date
 exit $RUN_STATUS
