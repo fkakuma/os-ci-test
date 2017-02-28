@@ -1,0 +1,13 @@
+diff --git a/neutron/tests/contrib/post_test_hook.sh b/neutron/tests/contrib/post_test_hook.sh
+index fd878f7..207ef39 100644
+--- a/neutron/tests/contrib/post_test_hook.sh
++++ b/neutron/tests/contrib/post_test_hook.sh
+@@ -31,7 +31,7 @@ if [[ "$venv" == dsvm-functional* ]] || [[ "$venv" == dsvm-fullstack* ]]; then
+     # Run tests
+     echo "Running neutron $venv test suite"
+     set +e
+-    sudo -H -u $owner $sudo_env tox -e $venv
++    sudo -H -u $owner $sudo_env tox -e $venv neutron.tests.fullstack.test_l3_agent neutron.tests.fullstack.test_securitygroup
+     testr_exit_code=$?
+     set -e
+
